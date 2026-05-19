@@ -25,14 +25,14 @@ mahasiswa yang bisa dipanggil.
 
  class  QueueArray.
 
-Class ini dipakai sebagai cetakan untuk membuat sistem antrian. Jadi semua data dan fungsi antrian disimpan di dalam class ini.
+Class ini dipakai  untuk membuat sistem antrian. Jadi semua data dan fungsi antrian disimpan di dalam class ini.
 
 
 ---
 
 def __init__(self, max_size=100):
 
-Ini adalah constructor. Fungsi ini otomatis dijalankan saat objek queue dibuat.
+Fungsi ini otomatis dijalankan saat objek queue dibuat.
 
 max_size=100 berarti kapasitas maksimal antrian adalah 100 data mahasiswa.
 

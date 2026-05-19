@@ -1,0 +1,357 @@
+README.md
+
+
+
+================================================================
+Judul Program
+Simulasi Antrian Pendaftaran KRS Mahasiswa menggunakan Queue Array
+================================================================
+
+Deskripsi Singkat
+-----------------
+Program ini digunakan untuk mensimulasikan sistem antrian pendaftaran
+KRS (Kartu Rencana Studi) mahasiswa di loket administrasi universitas
+menggunakan struktur data Queue (Antrian) berbasis Array.
+
+Queue adalah struktur data yang mengikuti prinsip FIFO (First In,
+First Out), artinya data yang pertama masuk akan pertama keluar,
+seperti antrian nyata di kehidupan sehari-hari.
+
+Algoritma Queue Array memiliki kompleksitas waktu O(1) untuk operasi
+enqueue (masuk antrian) dan dequeue (keluar antrian). Program ini
+memungkinkan mahasiswa untuk masuk antrian, dipanggil satu per satu,
+dan menampilkan status antrian secara real-time. Jika antrian penuh,
+sistem akan menolak mahasiswa baru. Jika antrian kosong, tidak ada
+mahasiswa yang bisa dipanggil.
+
+================================================================
+SUMBER KODE
+================================================================
+
+# Program: Simulasi Antrian KRS Mahasiswa - Queue Array
+# Bahasa  : Python
+
+MAX_SIZE = 5  # Kapasitas maksimal antrian loket
+
+class QueueAntrian:
+    def __init__(self):
+        self.data = [None] * MAX_SIZE  # Array untuk menyimpan antrian
+        self.front = -1               # Indeks depan antrian
+        self.rear = -1                # Indeks belakang antrian
+        self.jumlah = 0               # Jumlah mahasiswa dalam antrian
+
+    def is_empty(self):
+        return self.jumlah == 0
+
+    def is_full(self):
+        return self.jumlah == MAX_SIZE
+
+    def enqueue(self, nama_mahasiswa):
+        if self.is_full():
+            print(f"[PENUH] Antrian sudah penuh! {nama_mahasiswa} tidak bisa masuk.")
+            return False
+        if self.is_empty():
+            self.front = 0
+        self.rear = (self.rear + 1) % MAX_SIZE
+        self.data[self.rear] = nama_mahasiswa
+        self.jumlah += 1
+        print(f"[MASUK] {nama_mahasiswa} berhasil masuk ke antrian.")
+        return True
+
+    def dequeue(self):
+        if self.is_empty():
+            print("[KOSONG] Tidak ada mahasiswa dalam antrian.")
+            return None
+        mahasiswa_dipanggil = self.data[self.front]
+        self.data[self.front] = None
+        self.front = (self.front + 1) % MAX_SIZE
+        self.jumlah -= 1
+        if self.jumlah == 0:
+            self.front = -1
+            self.rear = -1
+        print(f"[DIPANGGIL] {mahasiswa_dipanggil} sedang dilayani di loket.")
+        return mahasiswa_dipanggil
+
+    def peek(self):
+        if self.is_empty():
+            print("[INFO] Antrian kosong.")
+            return None
+        return self.data[self.front]
+
+    def tampilkan_antrian(self):
+        print("\n--- STATUS ANTRIAN LOKET KRS ---")
+        if self.is_empty():
+            print("Antrian kosong.")
+        else:
+            print(f"Jumlah antrian: {self.jumlah}/{MAX_SIZE}")
+            print("Urutan antrian (depan -> belakang):")
+            idx = self.front
+            for i in range(self.jumlah):
+                posisi = (idx + i) % MAX_SIZE
+                print(f"  [{i+1}] {self.data[posisi]}")
+        print("--------------------------------\n")
+
+
+def main():
+    antrian = QueueAntrian()
+    print("=== SISTEM ANTRIAN KRS UNIVERSITAS ===\n")
+
+    # Simulasi mahasiswa datang dan masuk antrian
+    daftar_masuk = [
+        "Andi - NIM 2021001",
+        "Budi - NIM 2021002",
+        "Citra - NIM 2021003",
+        "Dewi - NIM 2021004",
+        "Eko - NIM 2021005",
+        "Fajar - NIM 2021006",  # Antrian sudah penuh
+    ]
+
+    print(">> Mahasiswa mendaftar ke antrian loket:")
+    for mhs in daftar_masuk:
+        antrian.enqueue(mhs)
+
+    antrian.tampilkan_antrian()
+
+    # Simulasi mahasiswa dipanggil loket
+    print(">> Loket mulai memanggil mahasiswa:\n")
+    antrian.dequeue()
+    antrian.dequeue()
+    antrian.tampilkan_antrian()
+
+    # Mahasiswa baru bisa masuk karena ada slot kosong
+    print(">> Mahasiswa baru masuk antrian:")
+    antrian.enqueue("Fajar - NIM 2021006")
+    antrian.enqueue("Gita - NIM 2021007")
+    antrian.tampilkan_antrian()
+
+    # Panggil semua sisa antrian
+    print(">> Memproses semua sisa antrian:\n")
+    while not antrian.is_empty():
+        antrian.dequeue()
+
+    antrian.tampilkan_antrian()
+    antrian.dequeue()  # Coba dequeue saat kosong
+
+
+if __name__ == "__main__":
+    main()
+
+================================================================
+Penjelasan Logika Per Baris
+================================================================
+
+MAX_SIZE = 5
+  Konstanta yang menentukan kapasitas maksimal antrian (jumlah loket
+  hanya bisa menampung 5 mahasiswa sekaligus).
+
+class QueueAntrian:
+  Kelas yang merepresentasikan struktur data Queue menggunakan array.
+  Semua operasi antrian dikemas dalam satu kelas ini.
+
+self.data = [None] * MAX_SIZE
+  Membuat array dengan ukuran MAX_SIZE, diisi None sebagai nilai awal.
+  Array inilah yang menyimpan data (nama mahasiswa) dalam antrian.
+
+self.front = -1 dan self.rear = -1
+  Inisialisasi indeks depan (front) dan belakang (rear) dengan -1,
+  menandakan antrian masih kosong.
+
+self.jumlah = 0
+  Variabel penghitung berapa banyak mahasiswa saat ini dalam antrian.
+
+def is_empty(self):
+  Fungsi yang mengembalikan True jika antrian kosong (jumlah == 0).
+  Digunakan sebelum dequeue agar tidak terjadi error.
+
+def is_full(self):
+  Fungsi yang mengembalikan True jika antrian penuh (jumlah == MAX_SIZE).
+  Digunakan sebelum enqueue agar tidak terjadi overflow.
+
+def enqueue(self, nama_mahasiswa):
+  Fungsi untuk menambahkan mahasiswa ke belakang antrian.
+  Pertama cek apakah antrian penuh. Jika penuh, tampilkan pesan dan
+  kembalikan False. Jika antrian kosong, set front = 0. Hitung posisi
+  rear baru dengan rumus modulo (circular array), simpan data, dan
+  tambah jumlah.
+
+self.rear = (self.rear + 1) % MAX_SIZE
+  Rumus circular array: ketika rear mencapai akhir array, ia akan
+  kembali ke indeks 0. Ini memaksimalkan penggunaan array tanpa
+  perlu menggeser elemen.
+
+def dequeue(self):
+  Fungsi untuk mengambil dan mengeluarkan mahasiswa dari depan antrian.
+  Cek apakah antrian kosong. Ambil data dari posisi front, kosongkan
+  slot tersebut (None), lalu geser front ke posisi berikutnya dengan
+  rumus modulo. Jika antrian menjadi kosong, reset front dan rear ke -1.
+
+mahasiswa_dipanggil = self.data[self.front]
+  Menyimpan sementara data mahasiswa yang ada di depan antrian sebelum
+  dikeluarkan, agar bisa dikembalikan atau ditampilkan.
+
+def peek(self):
+  Melihat siapa yang ada di depan antrian tanpa mengeluarkannya.
+  Berguna untuk menampilkan "mahasiswa berikutnya" tanpa memproses.
+
+def tampilkan_antrian(self):
+  Fungsi untuk menampilkan seluruh isi antrian dari depan ke belakang.
+  Menggunakan loop dengan perhitungan indeks modulo untuk mengikuti
+  urutan circular array yang benar.
+
+idx = self.front dan posisi = (idx + i) % MAX_SIZE
+  Menghitung posisi aktual setiap elemen dalam circular array.
+  Iterasi dari front sebanyak jumlah elemen yang ada.
+
+def main():
+  Fungsi utama yang mensimulasikan skenario nyata antrian KRS:
+  mahasiswa datang (enqueue), dipanggil loket (dequeue), mahasiswa
+  baru masuk, dan antrian diproses hingga habis.
+
+================================================================
+OUTPUT DARI SOURCE CODE
+================================================================
+
+=== SISTEM ANTRIAN KRS UNIVERSITAS ===
+
+>> Mahasiswa mendaftar ke antrian loket:
+[MASUK] Andi - NIM 2021001 berhasil masuk ke antrian.
+[MASUK] Budi - NIM 2021002 berhasil masuk ke antrian.
+[MASUK] Citra - NIM 2021003 berhasil masuk ke antrian.
+[MASUK] Dewi - NIM 2021004 berhasil masuk ke antrian.
+[MASUK] Eko - NIM 2021005 berhasil masuk ke antrian.
+[PENUH] Antrian sudah penuh! Fajar - NIM 2021006 tidak bisa masuk.
+
+--- STATUS ANTRIAN LOKET KRS ---
+Jumlah antrian: 5/5
+Urutan antrian (depan -> belakang):
+  [1] Andi - NIM 2021001
+  [2] Budi - NIM 2021002
+  [3] Citra - NIM 2021003
+  [4] Dewi - NIM 2021004
+  [5] Eko - NIM 2021005
+--------------------------------
+
+>> Loket mulai memanggil mahasiswa:
+
+[DIPANGGIL] Andi - NIM 2021001 sedang dilayani di loket.
+[DIPANGGIL] Budi - NIM 2021002 sedang dilayani di loket.
+
+--- STATUS ANTRIAN LOKET KRS ---
+Jumlah antrian: 3/5
+Urutan antrian (depan -> belakang):
+  [1] Citra - NIM 2021003
+  [2] Dewi - NIM 2021004
+  [3] Eko - NIM 2021005
+--------------------------------
+
+>> Mahasiswa baru masuk antrian:
+[MASUK] Fajar - NIM 2021006 berhasil masuk ke antrian.
+[MASUK] Gita - NIM 2021007 berhasil masuk ke antrian.
+
+--- STATUS ANTRIAN LOKET KRS ---
+Jumlah antrian: 5/5
+Urutan antrian (depan -> belakang):
+  [1] Citra - NIM 2021003
+  [2] Dewi - NIM 2021004
+  [3] Eko - NIM 2021005
+  [4] Fajar - NIM 2021006
+  [5] Gita - NIM 2021007
+--------------------------------
+
+>> Memproses semua sisa antrian:
+
+[DIPANGGIL] Citra - NIM 2021003 sedang dilayani di loket.
+[DIPANGGIL] Dewi - NIM 2021004 sedang dilayani di loket.
+[DIPANGGIL] Eko - NIM 2021005 sedang dilayani di loket.
+[DIPANGGIL] Fajar - NIM 2021006 sedang dilayani di loket.
+[DIPANGGIL] Gita - NIM 2021007 sedang dilayani di loket.
+
+--- STATUS ANTRIAN LOKET KRS ---
+Antrian kosong.
+--------------------------------
+
+[KOSONG] Tidak ada mahasiswa dalam antrian.
+
+================================================================
+Penjelasan Output
+================================================================
+
+Gambar/teks di atas menunjukkan output dari program simulasi antrian
+KRS mahasiswa menggunakan metode Queue Array dengan prinsip FIFO
+(First In, First Out).
+
+Berikut penjelasan langkah-langkah output tersebut:
+
+1. TAHAP PENGISIAN ANTRIAN (ENQUEUE):
+   - Program meminta 6 mahasiswa untuk masuk antrian.
+   - Kapasitas maksimal antrian adalah 5 orang.
+   - Mahasiswa pertama hingga kelima berhasil masuk antrian.
+   - Mahasiswa keenam (Fajar) ditolak karena antrian sudah penuh,
+     ditandai dengan pesan [PENUH].
+
+2. MENAMPILKAN STATUS ANTRIAN:
+   - Program menampilkan daftar antrian lengkap dari depan ke belakang.
+   - Terlihat 5 mahasiswa dalam urutan mereka datang (FIFO).
+
+3. TAHAP PEMANGGILAN (DEQUEUE):
+   - Loket memanggil mahasiswa dari depan antrian.
+   - Andi dipanggil pertama (masuk pertama = keluar pertama).
+   - Budi dipanggil kedua. Antrian kini tersisa 3 orang.
+
+4. MAHASISWA BARU MASUK:
+   - Setelah 2 slot kosong, Fajar dan Gita bisa masuk antrian.
+   - Antrian kembali penuh dengan 5 mahasiswa.
+   - Ini menunjukkan keunggulan circular array: slot yang dikosongkan
+     bisa dipakai ulang tanpa menggeser seluruh array.
+
+5. PROSES HINGGA ANTRIAN HABIS:
+   - Loket memproses semua mahasiswa tersisa satu per satu.
+   - Setelah semua selesai, antrian kosong.
+   - Percobaan dequeue pada antrian kosong menghasilkan pesan [KOSONG].
+
+================================================================
+KONSEP PENTING QUEUE ARRAY
+================================================================
+
++----------------------------------------------------------+
+|  PRINSIP FIFO (First In, First Out)                     |
+|  Mahasiswa yang PERTAMA datang akan PERTAMA dilayani     |
++----------------------------------------------------------+
+
+Operasi Dasar Queue:
+  - ENQUEUE : Menambah elemen ke belakang antrian (rear)
+  - DEQUEUE : Mengambil elemen dari depan antrian (front)
+  - PEEK    : Melihat elemen terdepan tanpa mengambilnya
+  - IS_EMPTY: Cek apakah antrian kosong
+  - IS_FULL : Cek apakah antrian penuh
+
+Ilustrasi Queue Array:
+
+  Awal (kosong):
+  [ ][ ][ ][ ][ ]
+   front=-1, rear=-1
+
+  Setelah enqueue Andi, Budi, Citra:
+  [Andi][Budi][Citra][ ][ ]
+   front=0              rear=2
+
+  Setelah dequeue (Andi keluar):
+  [    ][Budi][Citra][ ][ ]
+         front=1      rear=2
+
+  Circular Array - Rear kembali ke awal saat mencapai batas:
+  [Eko][Budi][Citra][Dewi][   ]
+  rear=0  front=1
+
+Kompleksitas Waktu:
+  - Enqueue : O(1) - langsung tambah di rear
+  - Dequeue : O(1) - langsung ambil dari front
+  - Peek    : O(1) - langsung lihat front
+  - Tampilkan: O(n) - perlu iterasi semua elemen
+
+Keunggulan Circular Array dibanding Queue biasa:
+  - Tidak perlu menggeser semua elemen saat dequeue
+  - Slot yang sudah dikosongkan bisa dipakai ulang
+  - Lebih efisien dari segi memori dan waktu
+
+================================================================

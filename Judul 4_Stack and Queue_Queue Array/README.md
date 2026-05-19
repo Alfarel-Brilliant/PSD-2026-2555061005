@@ -679,12 +679,18 @@ Memanggil fungsi main() agar program mulai berjalan.
 ---
 
 OUTPUT
+
+--
 <img width="626" height="711" alt="Image" src="https://github.com/user-attachments/assets/c14aa3b9-f0b0-4a97-9fdb-37353890e260" />
 ---
+
 <img width="753" height="837" alt="Image" src="https://github.com/user-attachments/assets/f32f0d9f-9f88-4261-bca7-4ba49a1eeed8" />
 ---
+
 <img width="739" height="828" alt="Image" src="https://github.com/user-attachments/assets/6d806187-19c1-4be1-924d-46b9be8cdbb3" />
 ---
+
+
 
 # PENJELASAN OUTPUT
 

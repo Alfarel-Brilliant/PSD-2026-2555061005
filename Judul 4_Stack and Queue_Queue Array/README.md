@@ -679,6 +679,94 @@ Memanggil fungsi main() agar program mulai berjalan.
 ---
 
 OUTPUT
+<img width="626" height="711" alt="Image" src="https://github.com/user-attachments/assets/c14aa3b9-f0b0-4a97-9fdb-37353890e260" />
+---
+<img width="753" height="837" alt="Image" src="https://github.com/user-attachments/assets/f32f0d9f-9f88-4261-bca7-4ba49a1eeed8" />
+---
+<img width="739" height="828" alt="Image" src="https://github.com/user-attachments/assets/6d806187-19c1-4be1-924d-46b9be8cdbb3" />
+---
 
+# PENJELASAN OUTPUT
+
+Pada awalnya program menampilkan menu utama:
+
+SISTEM ANTRIAN PENDAFTARAN KRS MAHASISWA 
+1. Daftar Antrian KRS
+2. Panggil Mahasiswa ke Loket
+3. Lihat Mahasiswa Terdepan
+4. Tampilkan Antrian
+5. Keluar
+
+Bagian ini berarti program meminta pengguna memilih salah satu menu. Pengguna bisa memilih menu untuk mendaftarkan mahasiswa ke antrian, memanggil mahasiswa ke loket, melihat mahasiswa paling depan, menampilkan seluruh antrian, atau keluar dari program.
+
+Saat pengguna memilih menu:
+
+Pilih: 1
+Masukkan NPM Mahasiswa: 2112
+
+Artinya pengguna memilih menu Daftar Antrian KRS. Program lalu meminta NPM mahasiswa. NPM 2112 dimasukkan ke dalam antrian, lalu program menampilkan pesan bahwa mahasiswa tersebut berhasil masuk antrian.
+
+Setelah itu pengguna beberapa kali memilih menu nomor 1 lagi dan memasukkan NPM:
+
+2112
+2222
+2332
+2442
+2552
+
+Artinya ada 5 mahasiswa yang berhasil masuk ke dalam antrian pendaftaran KRS. Urutan masuknya adalah 2112, 2222, 2332, 2442, lalu 2552.
+
+Kemudian pengguna memilih:
+
+Pilih: 4
+
+Menu nomor 4 adalah Tampilkan Antrian. Program lalu menampilkan:
+
+Daftar antrian pendaftaran KRS dari depan ke belakang: 2112 2222 2332 2442 2552
+
+Artinya urutan mahasiswa dalam antrian dari depan sampai belakang adalah 2112, 2222, 2332, 2442, dan 2552. Mahasiswa dengan NPM 2112 berada paling depan karena dia yang pertama masuk.
+
+Selanjutnya pengguna memilih:
+
+Pilih: 3
+
+Menu nomor 3 adalah Lihat Mahasiswa Terdepan. Program menampilkan:
+
+Mahasiswa paling depan dalam antrian: 2112
+
+Artinya mahasiswa yang akan dilayani paling pertama adalah NPM 2112. Pada bagian ini, data mahasiswa belum dihapus dari antrian karena menu ini hanya melihat, bukan memanggil.
+
+Lalu pengguna memilih menu nomor 2:
+
+Pilih: 2
+Mahasiswa dengan NPM 2112 dipanggil ke loket administrasi
+
+Menu nomor 2 digunakan untuk memanggil mahasiswa ke loket. Karena 2112 berada paling depan, maka mahasiswa tersebut dipanggil lebih dulu dan keluar dari antrian.
+
+Setelah itu pengguna terus memilih menu nomor 2, sehingga mahasiswa dipanggil satu per satu:
+
+2222
+2332
+2442
+2552
+
+Urutan pemanggilan mahasiswa menjadi:
+
+2112 - 2222 - 2332 - 2442 - 2552
+
+Urutan ini sama dengan urutan saat mahasiswa masuk ke antrian. Jadi program sudah benar menerapkan prinsip FIFO, yaitu yang masuk duluan akan dilayani duluan.
+
+Setelah semua mahasiswa dipanggil, pengguna memilih menu nomor 2 lagi. Program menampilkan:
+
+Antrian pendaftaran KRS kosong
+
+Artinya sudah tidak ada mahasiswa lagi di dalam antrian. Jadi program tidak bisa memanggil mahasiswa ke loket karena semua sudah selesai dilayani.
+
+Terakhir pengguna memilih:
+
+Pilih: 5
+Program sistem antrian pendaftaran KRS selesai.
+
+Menu nomor 5 digunakan untuk keluar dari program. Setelah itu program berhenti berjalan.
 
 LINK YOUTUBE :https://youtu.be/BLwLaG0TFkA?si=r9HBU0eS8Uggh4qq

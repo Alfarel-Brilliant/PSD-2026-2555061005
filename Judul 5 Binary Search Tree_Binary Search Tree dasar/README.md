@@ -25,7 +25,7 @@ class Node: = berfungsi sebagai class untuk membuat node atau simpul pada Binary
 
 def __init__(self, key): = berfungsi sebagai konstruktor yang otomatis dijalankan ketika objek Node dibuat. Parameter key digunakan untuk menerima nilai harga produk yang akan disimpan.
 
-self.key = key = berfungsi untuk menyimpan nilai key ke dalam atribut key milik node tersebut.
+self.key = key = berfungsi untuk menyimpan nilai key ke dalam atribut key milik nodeersebut.
 
 self.left = None = berfungsi untuk membuat cabang kiri dari node. Nilainya None karena saat node pertama kali dibuat, node belum memiliki anak kiri.
 
@@ -357,9 +357,9 @@ main() = berfungsi untuk memanggil fungsi main agar program mulai dijalankan.
 
 # OUTPUT
 
+
+
 ![screenshot_teks_terminal_bst.png](https://github.com/user-attachments/assets/e28850fe-c51b-4682-87bd-14e5ed84f0e7)
-
-
 
 
 

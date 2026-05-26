@@ -199,7 +199,7 @@ while pilih != 10: = berfungsi untuk menjalankan perulangan selama nilai pilih t
 
 print() = berfungsi untuk memberikan baris kosong agar tampilan menu terlihat lebih rapi.
 
-print("===== SISTEM HARGA PRODUK ONLINE =====") = berfungsi untuk menampilkan judul utama program.
+print("SISTEM HARGA PRODUK ONLINE") = berfungsi untuk menampilkan judul utama program.
 
 print("1. Tambah harga produk") = berfungsi untuk menampilkan pilihan menu nomor 1, yaitu menambah harga produk ke dalam tree.
 

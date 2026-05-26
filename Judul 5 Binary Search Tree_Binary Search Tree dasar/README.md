@@ -18,11 +18,7 @@ Pada Binary Search Tree, operasi pencarian dan penambahan data memiliki kompleks
 <img width="515" height="878" alt="Cuplikan layar 2026-05-26 212807" src="https://github.com/user-attachments/assets/b3139a75-a14e-402d-84af-38cab5b4e74f" />
 <img width="515" height="878" alt="Cuplikan layar 2026-05-26 212807" src="https://github.com/user-attachments/assets/60dd2993-c74a-428d-8a14-aebfcc3c9bfd" />
 <img width="761" height="860" alt="Cuplikan layar 2026-05-26 212832" src="https://github.com/user-attachments/assets/4c5cafb8-d3e8-45ab-9d07-53f35fd941db" />
-<img width="665" height="204" alt="Cuplikan layar 2026-05-26 212839" src="https://github.com/user-attachments/assets/9a336c74-b301-4258-a57f-31b9dabe5502" />
-
-
-
-# Penjelasan Logika Perbaris
+<img width="665" height="204" alt="Cuplikan layar 2026-05-26 212839" src="https://github.com/user-attachments/assets/9a336c74-b301-4258-a57f-31b9dabe5502" 
 
 
 # Penjelasan Logika Perbaris

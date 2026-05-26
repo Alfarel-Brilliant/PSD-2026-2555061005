@@ -27,7 +27,7 @@ Pada Binary Search Tree, operasi pencarian dan penambahan data memiliki kompleks
 
 # Penjelasan Logika Perbaris
 
-1. Bagian Class Node
+#1. Bagian Class Node
 
 class Node: = berfungsi sebagai class untuk membuat node atau simpul pada Binary Search Tree. Setiap node digunakan untuk menyimpan satu nilai data, yaitu harga produk.
 
@@ -39,7 +39,7 @@ self.left = None = berfungsi untuk membuat cabang kiri dari node. Nilainya None 
 
 self.right = None = berfungsi untuk membuat cabang kanan dari node. Nilainya None karena saat node pertama kali dibuat, node belum memiliki anak kanan.
 
-2. Bagian Class BSTHargaOnline
+# 2. Bagian Class BSTHargaOnline
 
 class BSTHargaOnline: = berfungsi sebagai class utama yang digunakan untuk mengelola struktur Binary Search Tree. Class ini berisi fungsi untuk menambah data, mencari data, menampilkan data, mencari nilai minimum, mencari nilai maksimum, menghitung jumlah node, dan menjumlahkan seluruh nilai harga.
 
@@ -47,7 +47,7 @@ def __init__(self): = berfungsi sebagai konstruktor pada class BSTHargaOnline. F
 
 self.root = None = berfungsi untuk membuat atribut root sebagai akar utama tree. Nilainya None karena pada awal program tree masih kosong.
 
-3. Bagian Fungsi insert_node(self, root, key)
+# 3. Bagian Fungsi insert_node(self, root, key)
 
 def insert_node(self, root, key): = berfungsi untuk memasukkan nilai harga produk ke dalam Binary Search Tree. Fungsi ini bekerja secara rekursif sampai menemukan posisi node yang sesuai.
 
@@ -65,13 +65,13 @@ root.right = self.insert_node(root.right, key) = berfungsi untuk memasukkan nila
 
 return root = berfungsi untuk mengembalikan root yang sudah diperbarui agar struktur tree tetap tersambung dengan benar.
 
-4. Bagian Fungsi insert(self, key)
+# 4. Bagian Fungsi insert(self, key)
 
 def insert(self, key): = berfungsi sebagai fungsi untuk menambahkan harga produk ke dalam Binary Search Tree.
 
 self.root = self.insert_node(self.root, key) = berfungsi untuk memulai proses penambahan data dari self.root. Setelah data berhasil diproses, hasil tree yang sudah diperbarui disimpan kembali ke self.root.
 
-5. Bagian Fungsi search_node(self, root, key)
+# 5. Bagian Fungsi search_node(self, root, key)
 
 def search_node(self, root, key): = berfungsi untuk mencari apakah suatu nilai harga terdapat di dalam Binary Search Tree.
 
@@ -89,13 +89,13 @@ return self.search_node(root.left, key) = berfungsi untuk melanjutkan proses pen
 
 return self.search_node(root.right, key) = berfungsi untuk melanjutkan proses pencarian ke cabang kanan jika nilai key lebih besar dari nilai node saat ini.
 
-6. Bagian Fungsi search(self, key)
+# 6. Bagian Fungsi search(self, key)
 
 def search(self, key): = berfungsi sebagai fungsi pembungkus untuk melakukan pencarian harga produk.
 
 return self.search_node(self.root, key) = berfungsi untuk memulai pencarian dari self.root dan mengembalikan hasil berupa True jika data ditemukan atau False jika data tidak ditemukan.
 
-7. Bagian Fungsi inorder(self, root)
+# 7. Bagian Fungsi inorder(self, root)
 
 def inorder(self, root): = berfungsi untuk menampilkan data harga secara berurutan dari nilai terkecil ke nilai terbesar.
 
@@ -109,7 +109,7 @@ print("Rp", root.key, end=" ") = berfungsi untuk menampilkan nilai harga pada no
 
 self.inorder(root.right) = berfungsi untuk menelusuri cabang kanan setelah nilai node saat ini ditampilkan.
 
-8. Bagian Fungsi preorder(self, root)
+# 8. Bagian Fungsi preorder(self, root)
 
 def preorder(self, root): = berfungsi untuk menampilkan data harga dengan urutan root, kiri, lalu kanan.
 
@@ -123,7 +123,7 @@ self.preorder(root.left) = berfungsi untuk menelusuri cabang kiri setelah root d
 
 self.preorder(root.right) = berfungsi untuk menelusuri cabang kanan setelah cabang kiri selesai ditelusuri.
 
-9. Bagian Fungsi postorder(self, root)
+# 9. Bagian Fungsi postorder(self, root)
 
 def postorder(self, root): = berfungsi untuk menampilkan data harga dengan urutan kiri, kanan, lalu root.
 
@@ -137,7 +137,7 @@ self.postorder(root.right) = berfungsi untuk menelusuri cabang kanan setelah cab
 
 print("Rp", root.key, end=" ") = berfungsi untuk menampilkan nilai node saat ini setelah cabang kiri dan cabang kanan selesai ditelusuri.
 
-10. Bagian Fungsi find_min(self, root)
+# 10. Bagian Fungsi find_min(self, root)
 
 def find_min(self, root): = berfungsi untuk mencari nilai harga paling kecil di dalam Binary Search Tree.
 
@@ -153,7 +153,7 @@ current = current.left = berfungsi untuk memindahkan penunjuk ke node kiri berik
 
 return current.key = berfungsi untuk mengembalikan nilai paling kecil setelah node paling kiri ditemukan.
 
-11. Bagian Fungsi find_max(self, root)
+# 11. Bagian Fungsi find_max(self, root)
 
 def find_max(self, root): = berfungsi untuk mencari nilai harga paling besar di dalam Binary Search Tree.
 
@@ -169,7 +169,7 @@ current = current.right = berfungsi untuk memindahkan penunjuk ke node kanan ber
 
 return current.key = berfungsi untuk mengembalikan nilai paling besar setelah node paling kanan ditemukan.
 
-12. Bagian Fungsi count_nodes(self, root)
+# 12. Bagian Fungsi count_nodes(self, root)
 
 def count_nodes(self, root): = berfungsi untuk menghitung jumlah node atau jumlah harga produk yang tersimpan dalam tree.
 
@@ -179,7 +179,7 @@ return 0 = berfungsi untuk mengembalikan nilai 0 jika node kosong.
 
 return 1 + self.count_nodes(root.left) + self.count_nodes(root.right) = berfungsi untuk menghitung satu node saat ini, kemudian menambahkan jumlah node dari cabang kiri dan cabang kanan.
 
-13. Bagian Fungsi sum_nodes(self, root)
+# 13. Bagian Fungsi sum_nodes(self, root)
 
 def sum_nodes(self, root): = berfungsi untuk menghitung total seluruh nilai harga produk yang tersimpan di dalam tree.
 
@@ -189,7 +189,7 @@ return 0 = berfungsi untuk mengembalikan nilai 0 jika node kosong agar tidak mem
 
 return root.key + self.sum_nodes(root.left) + self.sum_nodes(root.right) = berfungsi untuk menjumlahkan nilai pada node saat ini dengan seluruh nilai pada cabang kiri dan cabang kanan.
 
-14. Bagian Fungsi main()
+# 14. Bagian Fungsi main()
 
 def main(): = berfungsi sebagai fungsi utama yang menjalankan program.
 
@@ -199,7 +199,7 @@ pilih = 0 = berfungsi untuk memberikan nilai awal pada variabel pilih. Variabel 
 
 while pilih != 10: = berfungsi untuk menjalankan perulangan selama nilai pilih tidak sama dengan 10. Program akan terus berjalan sampai pengguna memilih menu keluar.
 
-15. Bagian Tampilan Menu
+# 15. Bagian Tampilan Menu
 
 print() = berfungsi untuk memberikan baris kosong agar tampilan menu terlihat lebih rapi.
 
@@ -225,7 +225,7 @@ print("9. Hitung total semua harga produk") = berfungsi untuk menampilkan piliha
 
 print("10. Keluar") = berfungsi untuk menampilkan pilihan menu nomor 10, yaitu keluar dari program.
 
-16. Bagian Input Pilihan Menu
+# 16. Bagian Input Pilihan Menu
 
 try: = berfungsi untuk mencoba menjalankan proses input pilihan menu. Bagian ini digunakan untuk mencegah program berhenti jika pengguna memasukkan input yang tidak sesuai.
 
@@ -237,7 +237,7 @@ print("Input tidak valid. Pilihan harus berupa angka.") = berfungsi untuk menamp
 
 continue = berfungsi untuk mengulang program kembali ke awal perulangan while, sehingga menu akan ditampilkan kembali tanpa menjalankan pilihan menu lainnya.
 
-17. Bagian Menu 1: Tambah Harga Produk
+# 17. Bagian Menu 1: Tambah Harga Produk
 
 if pilih == 1: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 1.
 
@@ -253,7 +253,7 @@ except ValueError: = berfungsi untuk menangani kesalahan jika pengguna memasukka
 
 print("Harga harus berupa angka.") = berfungsi untuk menampilkan pesan bahwa input harga harus berupa angka.
 
-18. Bagian Menu 2: Cari Harga Produk
+# 18. Bagian Menu 2: Cari Harga Produk
 
 elif pilih == 2: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 2.
 
@@ -273,7 +273,7 @@ except ValueError: = berfungsi untuk menangani kesalahan jika input harga bukan 
 
 print("Harga harus berupa angka.") = berfungsi untuk menampilkan pesan bahwa input harga harus berupa angka.
 
-19. Bagian Menu 3: Tampilkan Harga dari Murah ke Mahal
+# 19. Bagian Menu 3: Tampilkan Harga dari Murah ke Mahal
 
 elif pilih == 3: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 3.
 
@@ -283,7 +283,7 @@ bst.inorder(bst.root) = berfungsi untuk menjalankan fungsi inorder() dari root a
 
 print() = berfungsi untuk membuat baris baru setelah hasil traversal inorder selesai ditampilkan.
 
-20. Bagian Menu 4: Preorder Harga Produk
+# 20. Bagian Menu 4: Preorder Harga Produk
 
 elif pilih == 4: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 4.
 
@@ -293,7 +293,7 @@ bst.preorder(bst.root) = berfungsi untuk menjalankan fungsi preorder() dari root
 
 print() = berfungsi untuk membuat baris baru setelah hasil traversal preorder selesai ditampilkan.
 
-21. Bagian Menu 5: Postorder Harga Produk
+# 21. Bagian Menu 5: Postorder Harga Produk
 
 elif pilih == 5: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 5.
 
@@ -303,7 +303,7 @@ bst.postorder(bst.root) = berfungsi untuk menjalankan fungsi postorder() dari ro
 
 print() = berfungsi untuk membuat baris baru setelah hasil traversal postorder selesai ditampilkan.
 
-22. Bagian Menu 6: Cari Harga Termurah
+# 22. Bagian Menu 6: Cari Harga Termurah
 
 elif pilih == 6: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 6.
 
@@ -317,7 +317,7 @@ else: = berfungsi untuk menjalankan kondisi ketika data harga sudah tersedia.
 
 print("Harga produk termurah: Rp", harga_min) = berfungsi untuk menampilkan harga produk termurah yang ditemukan di dalam tree.
 
-23. Bagian Menu 7: Cari Harga Termahal
+# 23. Bagian Menu 7: Cari Harga Termahal
 
 elif pilih == 7: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 7.
 
@@ -331,31 +331,31 @@ else: = berfungsi untuk menjalankan kondisi ketika data harga sudah tersedia.
 
 print("Harga produk termahal: Rp", harga_max) = berfungsi untuk menampilkan harga produk termahal yang ditemukan di dalam tree.
 
-24. Bagian Menu 8: Hitung Jumlah Produk
+# 24. Bagian Menu 8: Hitung Jumlah Produk
 
 elif pilih == 8: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 8.
 
 print("Jumlah produk yang tersimpan:", bst.count_nodes(bst.root)) = berfungsi untuk menampilkan jumlah seluruh node atau jumlah data harga produk yang tersimpan di dalam tree.
 
-25. Bagian Menu 9: Hitung Total Semua Harga Produk
+# 25. Bagian Menu 9: Hitung Total Semua Harga Produk
 
 elif pilih == 9: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 9.
 
 print("Total semua harga produk: Rp", bst.sum_nodes(bst.root)) = berfungsi untuk menampilkan total seluruh harga produk yang tersimpan di dalam tree.
 
-26. Bagian Menu 10: Keluar
+# 26. Bagian Menu 10: Keluar
 
 elif pilih == 10: = berfungsi untuk mengecek apakah pengguna memilih menu nomor 10.
 
 print("Program selesai.") = berfungsi untuk menampilkan pesan bahwa program telah selesai dijalankan.
 
-27. Bagian Pilihan Tidak Valid
+# 27. Bagian Pilihan Tidak Valid
 
 else: = berfungsi untuk menangani pilihan menu yang tidak sesuai, misalnya pengguna memasukkan angka selain 1 sampai 10.
 
 print("Pilihan tidak valid.") = berfungsi untuk menampilkan pesan bahwa menu yang dipilih tidak tersedia.
 
-28. Bagian Penjalankan Program
+# 28. Bagian Penjalankan Program
 
 if __name__ == "__main__": = berfungsi untuk mengecek apakah file program dijalankan secara langsung.
 

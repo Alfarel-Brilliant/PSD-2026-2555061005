@@ -357,11 +357,7 @@ main() = berfungsi untuk memanggil fungsi main agar program mulai dijalankan.
 
 # OUTPUT
 
-
-
-![screenshot_teks_terminal_bst.png](https://github.com/user-attachments/assets/e28850fe-c51b-4682-87bd-14e5ed84f0e7)
-
-
+![screenshot_teks_terminal_bst.png](https://github.com/user-attachments/assets/c40dd019-ff97-4e6e-81f8-183cc6466b5b)
 
 # Penjelasan Output
 

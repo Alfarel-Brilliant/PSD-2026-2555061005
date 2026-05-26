@@ -1,16 +1,16 @@
 ## Judul Program
 
-**Simulasi Sistem Harga Produk Online menggunakan Binary Search Tree**
+# Simulasi Sistem Harga Produk Online menggunakan Binary Search Tree
 
-## Deskripsi Singkat
+# Deskripsi Singkat
 
-Program ini digunakan untuk mensimulasikan sistem penyimpanan harga produk pada toko online menggunakan struktur data **Binary Search Tree (BST)**. Binary Search Tree adalah struktur data berbentuk pohon biner yang menyimpan data secara terurut berdasarkan aturan tertentu.
+Program ini digunakan untuk  sistem penyimpanan harga produk pada toko online menggunakan struktur data Binary Search Tree (BST). Binary Search Tree adalah struktur data berbentuk pohon biner yang menyimpan data secara terurut berdasarkan aturan tertentu.
 
 Pada program ini, setiap harga produk disimpan sebagai sebuah node. Jika harga produk lebih kecil dari node utama, maka harga tersebut akan masuk ke bagian kiri. Jika harga produk lebih besar, maka harga tersebut akan masuk ke bagian kanan. Dengan aturan ini, data harga produk dapat dicari, ditampilkan, dihitung, serta diurutkan dengan lebih mudah.
 
 Program ini memungkinkan pengguna untuk menambahkan harga produk, mencari harga produk tertentu, menampilkan harga dari murah ke mahal, menampilkan traversal preorder dan postorder, mencari harga termurah, mencari harga termahal, menghitung jumlah produk, serta menghitung total semua harga produk yang tersimpan.
 
-Pada Binary Search Tree, operasi pencarian dan penambahan data memiliki kompleksitas waktu rata-rata **O(log n)** jika bentuk tree seimbang. Namun, pada kondisi terburuk, kompleksitasnya dapat menjadi **O(n)** apabila tree tidak seimbang. Jadi jangan asal bilang O(1), nanti BST-nya tersinggung dan dosen lo ikut nyengir sinis.
+Pada Binary Search Tree, operasi pencarian dan penambahan data memiliki kompleksitas waktu rata-rata O(log n) jika bentuk tree seimbang. Namun, pada kondisi terburuk, kompleksitasnya dapat menjadi O(n) apabila tree tidak seimbang.
 
 ## Sumber Kode
 

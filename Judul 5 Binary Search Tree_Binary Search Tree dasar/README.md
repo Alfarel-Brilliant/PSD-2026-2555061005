@@ -355,7 +355,7 @@ else: = berfungsi untuk menangani pilihan menu yang tidak sesuai, misalnya pengg
 
 print("Pilihan tidak valid.") = berfungsi untuk menampilkan pesan bahwa menu yang dipilih tidak tersedia.
 
-# 28. Bagian Penjalankan Program
+# 28. Bagian Menjalankan Program
 
 if __name__ == "__main__": = berfungsi untuk mengecek apakah file program dijalankan secara langsung.
 

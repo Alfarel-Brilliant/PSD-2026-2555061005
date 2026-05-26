@@ -362,35 +362,30 @@ main() = berfungsi untuk memanggil fungsi main agar program mulai dijalankan.
 
 # Penjelasan Output
 
-Output tersebut menunjukkan proses penggunaan program Sistem Harga Produk Online yang menggunakan struktur data Binary Search Tree. Data yang dimasukkan ke dalam program adalah harga produk sebesar Rp100, Rp500, dan Rp900.
+Output tersebut menunjukkan proses penggunaan program sistem harga produk online yang menggunakan struktur data Binary Search Tree. Pada program ini, data harga yang dimasukkan adalah Rp100, Rp500, dan Rp900.
 
-Pada awal program, sistem menampilkan menu utama yang berisi pilihan untuk menambah harga produk, mencari harga produk, menampilkan harga, mencari harga termurah, mencari harga termahal, menghitung jumlah produk, menghitung total harga produk, dan keluar dari program.
+Pada awal program, sistem menampilkan menu utama. Menu tersebut berisi beberapa pilihan, seperti menambah harga produk, mencari harga produk, menampilkan harga dari murah ke mahal, menampilkan preorder dan postorder, mencari harga termurah, mencari harga termahal, menghitung jumlah produk, menghitung total harga, serta keluar dari program.
 
-Ketika pengguna memilih menu 1, program meminta pengguna memasukkan harga produk. Harga pertama yang dimasukkan adalah Rp100. Karena data masih kosong, harga Rp100 menjadi node utama atau root dalam Binary Search Tree.
+Pertama, pengguna memilih menu nomor 1 untuk menambahkan harga produk. Harga yang pertama dimasukkan adalah Rp100. Karena sebelumnya belum ada data di dalam tree, maka harga Rp100 menjadi data pertama sekaligus menjadi root atau akar utama pada Binary Search Tree.
 
-Setelah itu, pengguna kembali memilih menu 1 dan memasukkan harga Rp500. Karena Rp500 lebih besar dari Rp100, maka harga Rp500 ditempatkan di sebelah kanan Rp100.
+Setelah itu, pengguna kembali memilih menu nomor 1 dan memasukkan harga Rp500. Karena nilai Rp500 lebih besar dari Rp100, maka data tersebut ditempatkan di sebelah kanan dari node Rp100.
 
-Kemudian pengguna memasukkan harga Rp900. Karena Rp900 lebih besar dari Rp100 dan juga lebih besar dari Rp500, maka harga Rp900 ditempatkan di sebelah kanan Rp500.
+Kemudian, pengguna memasukkan harga Rp900. Nilai Rp900 lebih besar dari Rp100 dan juga lebih besar dari Rp500, sehingga data tersebut ditempatkan di sebelah kanan node Rp500. Jadi, susunan data yang tersimpan dalam tree adalah Rp100, Rp500, dan Rp900.
 
-Dengan demikian, data harga yang tersimpan dalam Binary Search Tree adalah Rp100, Rp500, dan Rp900.
+Selanjutnya, pengguna memilih menu nomor 2 untuk mencari harga produk. Harga yang dicari adalah Rp500. Program kemudian menampilkan bahwa harga produk Rp500 ditemukan, yang berarti data tersebut memang sudah tersimpan di dalam Binary Search Tree.
 
-Ketika pengguna memilih menu 2 dan mencari harga Rp500, program menampilkan bahwa harga produk Rp500 ditemukan. Hal ini berarti harga tersebut memang sudah tersimpan di dalam Binary Search Tree.
+Pada menu nomor 3, program menampilkan daftar harga dari murah ke mahal, yaitu Rp100, Rp500, dan Rp900. Hasil ini diperoleh dari proses inorder traversal, yaitu proses penelusuran tree yang menampilkan data dari nilai terkecil sampai nilai terbesar.
 
-Ketika pengguna memilih menu 3, program menampilkan daftar harga dari murah ke mahal, yaitu Rp100, Rp500, dan Rp900. Hasil ini diperoleh dari proses inorder traversal. Inorder traversal menampilkan data dari nilai terkecil ke nilai terbesar.
+Pada menu nomor 4, program menampilkan hasil preorder traversal, yaitu Rp100, Rp500, dan Rp900. Pada preorder, data ditampilkan mulai dari root terlebih dahulu, kemudian dilanjutkan ke cabang berikutnya.
 
-Ketika pengguna memilih menu 4, program menampilkan preorder harga produk, yaitu Rp100, Rp500, dan Rp900. Preorder traversal menampilkan data mulai dari root terlebih dahulu, kemudian dilanjutkan ke cabang berikutnya.
+Pada menu nomor 5, program menampilkan hasil postorder traversal, yaitu Rp900, Rp500, dan Rp100. Pada postorder, data dari cabang ditampilkan lebih dulu, sedangkan root ditampilkan di bagian akhir.
 
-Ketika pengguna memilih menu 5, program menampilkan postorder harga produk, yaitu Rp900, Rp500, dan Rp100. Postorder traversal menampilkan data dari bagian cabang terlebih dahulu, lalu root ditampilkan terakhir.
+Pada menu nomor 6, program menampilkan harga produk termurah, yaitu Rp100. Harga ini menjadi nilai terkecil karena tidak ada data lain yang lebih kecil dari Rp100.
 
-Ketika pengguna memilih menu 6, program menampilkan harga produk termurah, yaitu Rp100. Harga ini menjadi nilai terkecil karena berada pada posisi paling awal dan tidak ada harga lain yang lebih kecil.
+Pada menu nomor 7, program menampilkan harga produk termahal, yaitu Rp900. Harga ini menjadi nilai terbesar karena berada pada bagian paling kanan dalam susunan Binary Search Tree.
 
-Ketika pengguna memilih menu 7, program menampilkan harga produk termahal, yaitu Rp900. Harga ini menjadi nilai terbesar karena berada pada bagian paling kanan dari Binary Search Tree.
+Pada menu nomor 8, program menampilkan jumlah produk yang tersimpan, yaitu 3. Jumlah tersebut sesuai dengan data yang sudah dimasukkan sebelumnya, yaitu Rp100, Rp500, dan Rp900.
 
-Ketika pengguna memilih menu 8, program menampilkan jumlah produk yang tersimpan, yaitu 3. Jumlah tersebut sesuai dengan tiga harga yang telah dimasukkan, yaitu Rp100, Rp500, dan Rp900.
+Pada menu nomor 9, program menampilkan total semua harga produk, yaitu Rp1500. Total tersebut diperoleh dari penjumlahan Rp100 ditambah Rp500 ditambah Rp900.
 
-Ketika pengguna memilih menu 9, program menampilkan total semua harga produk, yaitu Rp1500. Total ini diperoleh dari penjumlahan Rp100 ditambah Rp500 ditambah Rp900.
-
-Terakhir, ketika pengguna memilih menu 10, program menampilkan pesan Program selesai. Hal ini berarti pengguna keluar dari program dan proses selesai dijalankan.
-
-Kesimpulannya, output tersebut menunjukkan bahwa program berhasil menjalankan fungsi Binary Search Tree untuk menambah harga produk, mencari harga produk, menampilkan data harga, mencari harga termurah dan termahal, menghitung jumlah produk, serta menghitung total seluruh harga produk.
-
+Terakhir, pengguna memilih menu nomor 10 untuk keluar dari program. Setelah itu, program menampilkan pesan program selesai, yang menandakan bahwa proses penggunaan program telah berakhir.

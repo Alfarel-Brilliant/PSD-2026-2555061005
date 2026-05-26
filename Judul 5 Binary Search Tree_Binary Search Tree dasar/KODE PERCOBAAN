@@ -103,7 +103,7 @@ def main():
     pilih = 0
 
     while pilih != 10:
-        print("\n=== SISTEM HARGA PRODUK ONLINE ===")
+        print("\nSISTEM HARGA PRODUK ONLINE")
         print("1. Tambah harga produk")
         print("2. Cari harga produk")
         print("3. Tampilkan harga dari murah ke mahal")

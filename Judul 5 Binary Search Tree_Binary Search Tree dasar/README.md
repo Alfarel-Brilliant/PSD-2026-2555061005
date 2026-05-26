@@ -27,7 +27,7 @@ Pada Binary Search Tree, operasi pencarian dan penambahan data memiliki kompleks
 
 # Penjelasan Logika Perbaris
 
-#1. Bagian Class Node
+# 1. Bagian Class Node
 
 class Node: = berfungsi sebagai class untuk membuat node atau simpul pada Binary Search Tree. Setiap node digunakan untuk menyimpan satu nilai data, yaitu harga produk.
 

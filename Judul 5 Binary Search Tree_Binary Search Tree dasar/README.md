@@ -1,6 +1,6 @@
-## Judul Program
+## JUDUL PROGRAM
 
-# Simulasi Sistem Harga Produk Online menggunakan Binary Search Tree
+Simulasi Sistem Harga Produk Online menggunakan Binary Search Tree
 
 # Deskripsi Singkat
 

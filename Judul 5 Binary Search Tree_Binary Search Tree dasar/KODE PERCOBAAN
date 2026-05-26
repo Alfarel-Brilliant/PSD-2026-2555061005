@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, key):
-        self.key = key          # key digunakan untuk menyimpan harga produk
+        self.key = key          
         self.left = None
         self.right = None
 

@@ -1,22 +1,24 @@
-
 class Node:
     def __init__(self, key):
-        self.key = key
+        self.key = key          # key digunakan untuk menyimpan harga produk
         self.left = None
         self.right = None
 
 
-class BSTDasar:
+class BSTHargaOnline:
     def __init__(self):
         self.root = None
 
     def insert_node(self, root, key):
         if root is None:
             return Node(key)
+
         if key < root.key:
             root.left = self.insert_node(root.left, key)
+
         elif key > root.key:
             root.right = self.insert_node(root.right, key)
+
         return root
 
     def insert(self, key):
@@ -25,10 +27,13 @@ class BSTDasar:
     def search_node(self, root, key):
         if root is None:
             return False
+
         if root.key == key:
             return True
+
         if key < root.key:
             return self.search_node(root.left, key)
+
         return self.search_node(root.right, key)
 
     def search(self, key):
@@ -37,109 +42,144 @@ class BSTDasar:
     def inorder(self, root):
         if root is None:
             return
+
         self.inorder(root.left)
-        print(root.key, end=" ")
+        print(f"Rp{root.key}", end=" ")
         self.inorder(root.right)
 
     def preorder(self, root):
         if root is None:
             return
-        print(root.key, end=" ")
+
+        print(f"Rp{root.key}", end=" ")
         self.preorder(root.left)
         self.preorder(root.right)
 
     def postorder(self, root):
         if root is None:
             return
+
         self.postorder(root.left)
         self.postorder(root.right)
-        print(root.key, end=" ")
+        print(f"Rp{root.key}", end=" ")
 
     def find_min(self, root):
         if root is None:
             return -1
+
         current = root
+
         while current.left is not None:
             current = current.left
+
         return current.key
 
     def find_max(self, root):
         if root is None:
             return -1
+
         current = root
+
         while current.right is not None:
             current = current.right
+
         return current.key
 
     def count_nodes(self, root):
         if root is None:
             return 0
+
         return 1 + self.count_nodes(root.left) + self.count_nodes(root.right)
 
     def sum_nodes(self, root):
         if root is None:
             return 0
+
         return root.key + self.sum_nodes(root.left) + self.sum_nodes(root.right)
 
 
 def main():
-    bst = BSTDasar()
+    bst = BSTHargaOnline()
     pilih = 0
+
     while pilih != 10:
-        print("\n=== BST (Dasar) ===")
-        print("1. Insert")
-        print("2. Search")
-        print("3. Inorder")
-        print("4. Preorder")
-        print("5. Postorder")
-        print("6. Min")
-        print("7. Max")
-        print("8. Count nodes")
-        print("9. Sum nodes")
+        print("\n=== SISTEM HARGA PRODUK ONLINE ===")
+        print("1. Tambah harga produk")
+        print("2. Cari harga produk")
+        print("3. Tampilkan harga dari murah ke mahal")
+        print("4. Preorder harga produk")
+        print("5. Postorder harga produk")
+        print("6. Cari harga termurah")
+        print("7. Cari harga termahal")
+        print("8. Hitung jumlah produk")
+        print("9. Hitung total semua harga produk")
         print("10. Keluar")
+
         try:
-            pilih = int(input("Pilih: "))
+            pilih = int(input("Pilih menu: "))
         except ValueError:
-            print("Input tidak valid!")
+            print("Input tidak valid! Masukkan angka menu.")
             continue
+
         if pilih == 1:
             try:
-                x = int(input("Masukkan nilai: "))
-                bst.insert(x)
-                print(f"Nilai {x} berhasil dimasukkan")
+                harga = int(input("Masukkan harga produk: "))
+                bst.insert(harga)
+                print(f"Harga produk Rp{harga} berhasil dimasukkan.")
             except ValueError:
-                print("Input tidak valid!")
+                print("Input tidak valid! Harga harus berupa angka.")
+
         elif pilih == 2:
             try:
-                x = int(input("Cari nilai: "))
-                if bst.search(x):
-                    print("Ditemukan")
+                harga = int(input("Masukkan harga produk yang dicari: "))
+
+                if bst.search(harga):
+                    print(f"Harga produk Rp{harga} ditemukan.")
                 else:
-                    print("Tidak ditemukan")
+                    print(f"Harga produk Rp{harga} tidak ditemukan.")
             except ValueError:
-                print("Input tidak valid!")
+                print("Input tidak valid! Harga harus berupa angka.")
+
         elif pilih == 3:
-            print("Inorder: ", end="")
+            print("Daftar harga dari murah ke mahal: ", end="")
             bst.inorder(bst.root)
             print()
+
         elif pilih == 4:
-            print("Preorder: ", end="")
+            print("Preorder harga produk: ", end="")
             bst.preorder(bst.root)
             print()
+
         elif pilih == 5:
-            print("Postorder: ", end="")
+            print("Postorder harga produk: ", end="")
             bst.postorder(bst.root)
             print()
+
         elif pilih == 6:
-            print(f"Min: {bst.find_min(bst.root)}")
+            harga_min = bst.find_min(bst.root)
+
+            if harga_min == -1:
+                print("Data harga produk masih kosong.")
+            else:
+                print(f"Harga produk termurah: Rp{harga_min}")
+
         elif pilih == 7:
-            print(f"Max: {bst.find_max(bst.root)}")
+            harga_max = bst.find_max(bst.root)
+
+            if harga_max == -1:
+                print("Data harga produk masih kosong.")
+            else:
+                print(f"Harga produk termahal: Rp{harga_max}")
+
         elif pilih == 8:
-            print(f"Jumlah node: {bst.count_nodes(bst.root)}")
+            print(f"Jumlah produk yang tersimpan: {bst.count_nodes(bst.root)}")
+
         elif pilih == 9:
-            print(f"Jumlah nilai: {bst.sum_nodes(bst.root)}")
+            print(f"Total semua harga produk: Rp{bst.sum_nodes(bst.root)}")
+
         elif pilih == 10:
             print("Program selesai.")
+
         else:
             print("Pilihan tidak valid!")
 

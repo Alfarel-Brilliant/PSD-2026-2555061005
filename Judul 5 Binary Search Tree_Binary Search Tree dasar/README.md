@@ -357,10 +357,9 @@ main() = berfungsi untuk memanggil fungsi main agar program mulai dijalankan.
 
 # OUTPUT
 
-<img width="374" height="811" alt="Cuplikan layar 2026-05-26 214005" src="https://github.com/user-attachments/assets/67c088b1-5b3a-4aa8-9c7d-857a9ec49c44" />
-<img width="469" height="773" alt="Cuplikan layar 2026-05-26 214041" src="https://github.com/user-attachments/assets/d3845356-b34a-4d16-b5ae-4b56cbe64164" />
-<img width="536" height="809" alt="Cuplikan layar 2026-05-26 214053" src="https://github.com/user-attachments/assets/d281354b-5848-4e58-908b-12dfe865067a" />
-<img width="536" height="809" alt="Cuplikan layar 2026-05-26 214053" src="https://github.com/user-attachments/assets/52ff9e6b-bd1d-4335-a6bd-ebffc0ca5228" />
+![screenshot_teks_terminal_bst.png](https://github.com/user-attachments/assets/e28850fe-c51b-4682-87bd-14e5ed84f0e7)
+
+
 
 
 

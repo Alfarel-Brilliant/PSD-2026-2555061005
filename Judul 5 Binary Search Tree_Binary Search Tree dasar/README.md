@@ -389,3 +389,5 @@ Pada menu nomor 8, program menampilkan jumlah produk yang tersimpan, yaitu 3. Ju
 Pada menu nomor 9, program menampilkan total semua harga produk, yaitu Rp1500. Total tersebut diperoleh dari penjumlahan Rp100 ditambah Rp500 ditambah Rp900.
 
 Terakhir, pengguna memilih menu nomor 10 untuk keluar dari program. Setelah itu, program menampilkan pesan program selesai, yang menandakan bahwa proses penggunaan program telah berakhir.
+
+LINK YOUTUBE: https://youtu.be/H8VyqCcfLvA?si=DdqnB1I-F4w4hBbD

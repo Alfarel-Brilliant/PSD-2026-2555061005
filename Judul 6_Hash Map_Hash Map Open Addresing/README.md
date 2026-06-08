@@ -1,14 +1,14 @@
-## Judul
+### Judul
 Program Hash Map Data Barang Toko Menggunakan Open Addressing
 
-## Deskripsi Singkat
+### Deskripsi Singkat
 
 Program ini merupakan implementasi struktur data Hash Map yang digunakan untuk menyimpan dan mengelola data barang pada sebuah toko sederhana. Dalam program ini, setiap barang memiliki "kode barang" sebagai **key** dan "nama barang" sebagai **value**. Key berfungsi sebagai identitas unik yang digunakan untuk menentukan lokasi penyimpanan data di dalam hash table, sedangkan value merupakan informasi barang yang disimpan. Melalui program ini, pengguna dapat memahami proses penambahan data, pencarian data, penghapusan data, serta penampilan seluruh isi tabel.
 
 Struktur data yang diterapkan pada program ini adalah Hash Map Open Addressing dengan metode **linear probing**. Metode ini bekerja dengan cara menghitung indeks penyimpanan menggunakan fungsi hash. Apabila terjadi **collision**, yaitu ketika dua key menghasilkan indeks yang sama, maka program akan mencari slot kosong berikutnya secara berurutan. Dengan demikian, data tetap dapat disimpan di dalam hash table meskipun terdapat tabrakan indeks. Penerapan metode ini menunjukkan bahwa Hash Map dapat digunakan untuk mempercepat proses pencarian data dibandingkan pencarian secara berurutan.
 
 
-## Penjelasan kode
+### Penjelasan kode
 
 
 
@@ -32,7 +32,7 @@ DELETED = 2 berfungsi sebagai tanda bahwa slot sebelumnya pernah berisi data, te
 
 
 
-# 2. Bagian Class Entry
+#### 2. Bagian Class Entry
 
 
 
@@ -56,7 +56,7 @@ self.state = SlotState.EMPTY berfungsi untuk memberikan status awal pada slot, y
 
 
 
-# 3. Bagian Class HashMapOpenAddressing
+#### 3. Bagian Class HashMapOpenAddressing
 
 
 
@@ -76,7 +76,7 @@ self.table = Entry for range self.SIZE berfungsi untuk membuat list yang berisi 
 
 
 
-# 4. Bagian Fungsi hash_function
+#### 4. Bagian Fungsi hash_function
 
 
 
@@ -88,7 +88,7 @@ return key % self.SIZE berfungsi untuk menghasilkan index penyimpanan dari key. 
 
 
 
-# 5. Bagian Fungsi insert
+#### 5. Bagian Fungsi insert
 
 
 
@@ -168,7 +168,7 @@ return False berfungsi untuk mengembalikan nilai bahwa data gagal dimasukkan kar
 
 
 
-# 6. Bagian Fungsi search
+#### 6. Bagian Fungsi search
 
 
 
@@ -204,7 +204,7 @@ return self.table i berfungsi untuk mengembalikan slot yang berisi data barang y
 
 
 
-# 7. Bagian Fungsi remove_key
+#### 7. Bagian Fungsi remove_key
 
 
 
@@ -232,7 +232,7 @@ return True berfungsi untuk mengembalikan nilai bahwa data berhasil dihapus.
 
 
 
-# 8. Bagian Fungsi display
+#### 8. Bagian Fungsi display
 
 
 
@@ -276,7 +276,7 @@ print Kode Barang dan Data berfungsi untuk menampilkan kode barang dan data bara
 
 
 
-# 9. Bagian Fungsi main
+#### 9. Bagian Fungsi main
 
 
 

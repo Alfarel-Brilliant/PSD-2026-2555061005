@@ -1,1 +1,127 @@
-Judul
+class SlotState:
+    EMPTY = 0
+    OCCUPIED = 1
+    DELETED = 2
+
+
+class Entry:
+    def __init__(self):
+        self.key = None
+        self.value = None
+        self.state = SlotState.EMPTY
+
+
+class HashMapOpenAddressing:
+    def __init__(self, size=10):
+        self.SIZE = size
+        self.table = [Entry() for _ in range(self.SIZE)]
+
+    def hash_function(self, key):
+        return (key % self.SIZE + self.SIZE) % self.SIZE
+
+    def insert(self, key, value):
+        idx = self.hash_function(key)
+        first_deleted = -1
+
+        for step in range(self.SIZE):
+            i = (idx + step) % self.SIZE
+
+            if self.table[i].state == SlotState.OCCUPIED:
+                if self.table[i].key == key:
+                    self.table[i].value = value
+                    return True
+
+            elif self.table[i].state == SlotState.DELETED:
+                if first_deleted == -1:
+                    first_deleted = i
+
+            else:
+                if first_deleted != -1:
+                    i = first_deleted
+
+                self.table[i].key = key
+                self.table[i].value = value
+                self.table[i].state = SlotState.OCCUPIED
+                return True
+
+        if first_deleted != -1:
+            self.table[first_deleted].key = key
+            self.table[first_deleted].value = value
+            self.table[first_deleted].state = SlotState.OCCUPIED
+            return True
+
+        return False
+
+    def search(self, key):
+        idx = self.hash_function(key)
+
+        for step in range(self.SIZE):
+            i = (idx + step) % self.SIZE
+
+            if self.table[i].state == SlotState.EMPTY:
+                return None
+
+            if self.table[i].state == SlotState.OCCUPIED and self.table[i].key == key:
+                return self.table[i]
+
+        return None
+
+    def remove_key(self, key):
+        entry = self.search(key)
+
+        if entry is None:
+            return False
+
+        entry.state = SlotState.DELETED
+        return True
+
+    def display(self):
+        print("\nData Barang di Toko")
+        print("Hash Table menggunakan Open Addressing Linear Probing:")
+
+        for i in range(self.SIZE):
+            print(f"{i}: ", end="")
+
+            if self.table[i].state == SlotState.EMPTY:
+                print("EMPTY")
+
+            elif self.table[i].state == SlotState.DELETED:
+                print("DELETED")
+
+            else:
+                print(f"Kode Barang: {self.table[i].key}, Data: {self.table[i].value}")
+
+
+def main():
+    hashmap = HashMapOpenAddressing()
+
+    hashmap.insert(101, "Beras 5 Kg, Stok: 20, Harga: Rp75.000")
+    hashmap.insert(111, "Minyak Goreng 1 Liter, Stok: 35, Harga: Rp18.000")
+    hashmap.insert(121, "Gula Pasir 1 Kg, Stok: 40, Harga: Rp15.000")
+    hashmap.insert(102, "Telur Ayam 1 Kg, Stok: 25, Harga: Rp28.000")
+
+    hashmap.display()
+
+    hasil = hashmap.search(111)
+
+    if hasil is not None:
+        print(f"\nBarang dengan kode 111 ditemukan")
+        print(f"Data barang = {hasil.value}")
+    else:
+        print("\nBarang dengan kode 111 tidak ditemukan")
+
+    hashmap.remove_key(111)
+    print("\nSetelah menghapus barang dengan kode 111:")
+    hashmap.display()
+
+    hasil = hashmap.search(121)
+
+    if hasil is not None:
+        print(f"\nBarang dengan kode 121 masih ditemukan")
+        print(f"Data barang = {hasil.value}")
+    else:
+        print("\nBarang dengan kode 121 tidak ditemukan")
+
+
+if __name__ == "__main__":
+    main()

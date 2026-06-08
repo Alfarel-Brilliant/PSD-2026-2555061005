@@ -12,7 +12,7 @@ Struktur data yang diterapkan pada program ini adalah Hash Map Open Addressing d
 
 
 
-### 1. Bagian Class SlotState
+#### 1. Bagian Class SlotState
 
 
 

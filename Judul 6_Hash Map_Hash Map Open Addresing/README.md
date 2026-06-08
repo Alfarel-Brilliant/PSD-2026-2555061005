@@ -1,7 +1,7 @@
 # Judul
 
 
-# Deskripsi Singkat
+## Deskripsi Singkat
 
 Program ini merupakan implementasi struktur data **Hash Map** yang digunakan untuk menyimpan dan mengelola data barang pada sebuah toko sederhana. Dalam program ini, setiap barang memiliki **kode barang** sebagai **key** dan **nama barang** sebagai **value**. Key berfungsi sebagai identitas unik yang digunakan untuk menentukan lokasi penyimpanan data di dalam hash table, sedangkan value merupakan informasi barang yang disimpan. Melalui program ini, pengguna dapat memahami proses penambahan data, pencarian data, penghapusan data, serta penampilan seluruh isi tabel.
 

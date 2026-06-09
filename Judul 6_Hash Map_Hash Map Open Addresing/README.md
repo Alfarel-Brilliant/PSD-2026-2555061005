@@ -6,6 +6,8 @@ Program Hash Map Data Barang Toko Menggunakan Open Addressing
 Program ini merupakan implementasi struktur data Hash Map yang digunakan untuk menyimpan dan mengelola data barang pada sebuah toko sederhana. Dalam program ini, setiap barang memiliki "kode barang" sebagai **key** dan "nama barang" sebagai **value**. Key berfungsi sebagai identitas unik yang digunakan untuk menentukan lokasi penyimpanan data di dalam hash table, sedangkan value merupakan informasi barang yang disimpan. Melalui program ini, pengguna dapat memahami proses penambahan data, pencarian data, penghapusan data, serta penampilan seluruh isi tabel.
 
 Struktur data yang diterapkan pada program ini adalah Hash Map Open Addressing dengan metode **linear probing**. Metode ini bekerja dengan cara menghitung indeks penyimpanan menggunakan fungsi hash. Apabila terjadi **collision**, yaitu ketika dua key menghasilkan indeks yang sama, maka program akan mencari slot kosong berikutnya secara berurutan. Dengan demikian, data tetap dapat disimpan di dalam hash table meskipun terdapat tabrakan indeks. Penerapan metode ini menunjukkan bahwa Hash Map dapat digunakan untuk mempercepat proses pencarian data dibandingkan pencarian secara berurutan.
+### Gambar Kode
+<img width="683" height="2560" alt="Screenshot_20260609_210131_Gallery jpg" src="https://github.com/user-attachments/assets/e2617da3-6b4a-47dd-aa18-3825bbad0f6e" />
 
 
 ### Penjelasan kode

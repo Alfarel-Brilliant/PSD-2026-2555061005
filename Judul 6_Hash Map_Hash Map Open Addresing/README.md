@@ -340,5 +340,11 @@ if name sama dengan main berfungsi untuk memastikan program utama hanya dijalank
 
 main berfungsi untuk memanggil fungsi utama agar seluruh proses program berjalan.
 
+### Gambar output
+<img width="1600" height="1596" alt="WhatsApp Image 2026-06-09 at 23 07 22" src="https://github.com/user-attachments/assets/5d7eb86a-323e-4f3e-9765-ce87cb92a668" />
+
+### Penjelasan Output
+### LINK YOUTUBE
+
 
 

@@ -1,4 +1,4 @@
-2### Judul
+## Judul
 Program Hash Map Data Barang Toko Menggunakan Open Addressing
 
 ### Deskripsi Singkat
